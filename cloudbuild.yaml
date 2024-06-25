@@ -67,4 +67,4 @@ options:
 substitutions:
   _SERVICE: langserve
   _REGION: us-central1
-  _OPENAI_API_KEY: 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
+  _OPENAI_API_KEY: ${OPENAI_API_KEY}
