@@ -38,7 +38,7 @@ steps:
   args:
   - 'run'
   - 'deploy'
-  - 'fastapi-movies'
+  - 'langserve'
   - '--image'
   - 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME-$SHORT_SHA'
   - '--region'
