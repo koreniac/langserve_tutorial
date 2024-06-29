@@ -18,8 +18,8 @@ summarization_assistant_prompt = PromptTemplate(
 
 # llm = OpenAI(model='gpt-3.5-turbo-instruct',
 #              temperature=0.5)
-llm = OpenAI(api_key="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",
-    openai_api_base="https://api.opentyphoon.ai/v1",
+# api_key="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",
+llm = OpenAI(openai_api_base="https://api.opentyphoon.ai/v1",
     model="typhoon-v1.5x-70b-instruct",
     temperature=0)
 llm_chain = summarization_assistant_prompt | llm
