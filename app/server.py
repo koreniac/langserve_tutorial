@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 summarization_assistant_template = """
-You are a text summarization bot. Your expertise is exclusively in analyzing and summarizing user-provided texts. 
-Create a concise and comprehensive summary of the provided text, retaining all crucial information in a 
+You are a text summarization bot. Your expertise is exclusively in analyzing and summarizing user-provided texts.
+Create a concise and comprehensive summary of the provided text, retaining all crucial information in a
 shorter form. Text for Summarization: {text_for_summarization}"""
 
 summarization_assistant_prompt = PromptTemplate(
@@ -16,8 +16,12 @@ summarization_assistant_prompt = PromptTemplate(
     template=summarization_assistant_template
 )
 
-llm = OpenAI(model='gpt-3.5-turbo-instruct',
-             temperature=0.5)
+# llm = OpenAI(model='gpt-3.5-turbo-instruct',
+#              temperature=0.5)
+llm = OpenAI(api_key="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",
+    openai_api_base="https://api.opentyphoon.ai/v1",
+    model="typhoon-v1.5x-70b-instruct",
+    temperature=0)
 llm_chain = summarization_assistant_prompt | llm
 
 app = FastAPI(
